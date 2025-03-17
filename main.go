@@ -2,39 +2,49 @@ package main
 
 import (
 	"cli-go/commands"
-	"os"
-	"strings"
+	"cli-go/utils"
+	"fmt"
 
 	"github.com/fatih/color"
 )
 
 func main() {
-	if len(os.Args) < 2 {
-		color.Red("Mal uso del CLI")
-		color.Blue("Uso: cli-go <comando> [argumentos]")
-		os.Exit(1)
-	}
 
-	comando := os.Args[1]
+	for {
+		utils.Menu()
 
-	switch comando {
-	case "ayuda":
-		commands.Ayuda()
-	case "creditos":
-		commands.Creditos()
-	case "clima":
-		if len(os.Args) < 3 {
-			color.Red("Mal uso del comando")
-			color.Blue("Uso: cli-go clima <ciudad>")
-			os.Exit(1)
+		var opcion int
+
+		fmt.Print("Elige una opción (escribe 10 para salir): ")
+		fmt.Scan(&opcion)
+
+		switch opcion {
+		case 10:
+			color.Yellow("Has elegido salir")
+			return
+		case 1:
+			color.Yellow("Has elegido el comando de Gemini\n ")
+
+			commands.Gemini()
+		case 2:
+			color.Yellow("Has elegido el comando de Clima\n ")
+
+			commands.Clima()
+		case 3:
+			color.Yellow("Has elegido el comando de Creditos\n ")
+
+			commands.Creditos()
+		case 4:
+			color.Yellow("Has elegido el comando de Version\n ")
+
+			commands.Version()
+		case 5:
+			color.Yellow("Has elegido el comando de Limpiar terminal\n ")
+
+			commands.ClearTerminal()
+		default:
+			color.Red("No se pudo encontrar ese comando")
 		}
-		ciudad := strings.Join(os.Args[2:], " ")
-		commands.Clima(ciudad)
-	case "gemini":
 
-		commands.Gemini()
-	default:
-		color.Red("Ese comando no existe")
-		os.Exit(1)
 	}
 }

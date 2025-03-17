@@ -2,6 +2,7 @@ package commands
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/fatih/color"
@@ -17,7 +18,12 @@ type InfoClima struct {
 	} `json:"current"`
 }
 
-func Clima(ciudad string) {
+func Clima() {
+
+	var ciudad string
+	fmt.Print("Introduce la ciudad a revisar: ")
+
+	fmt.Scan(&ciudad)
 	url := "https://api.popcat.xyz/weather?q=" + ciudad
 
 	resp, err := http.Get(url)
@@ -43,4 +49,5 @@ func Clima(ciudad string) {
 	} else {
 		color.Red("No se encontraron resultados para la ciudad especificada.")
 	}
+
 }

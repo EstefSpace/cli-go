@@ -1,3 +1,5 @@
+github.com/estefspace/gemini-go v0.0.0-20250317165529-c74fc2effcd1 h1:2iRADWPAVb/bdkZ/6ZFbhxbwrR08x9JA4I0l37S21jc=
+github.com/estefspace/gemini-go v0.0.0-20250317165529-c74fc2effcd1/go.mod h1:2to6qzgMIKX/+zIhb+O8NkEfTCyphbrfDho4V5pQmjw=
 github.com/fatih/color v1.18.0 h1:S8gINlzdQ840/4pfAwic/ZE0djQEH3wM94VfqLTZcOM=
 github.com/fatih/color v1.18.0/go.mod h1:4FelSpRwEGDpQ12mAdzqdOukCy4u8WUtOY6lkT/6HfU=
 github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
