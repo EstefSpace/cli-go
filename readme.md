@@ -6,3 +6,9 @@ No hay mucha descripción, es otro cli hecho con Golang, pero con comandos muy u
 # Crea tu archivo .env
 API_KEY_GEMINI=tuApiKey
 ```
+
+# Si no se actualiza
+
+```
+go build
+```
