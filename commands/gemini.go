@@ -35,6 +35,7 @@ func Gemini() {
 
 		if strings.ToLower(prompt) == "salir" {
 			color.Green("Conversación terminada.")
+
 			break
 		}
 
