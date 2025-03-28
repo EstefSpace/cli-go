@@ -14,43 +14,36 @@ func main() {
 	for {
 		utils.Menu()
 
-		var opcion int
+		var opcion string
 
-		fmt.Print("Elige una opción (escribe 10 para salir): ")
+		fmt.Print("Elige una opción (escribe salir para terminar la ejecucion): ")
 		fmt.Scan(&opcion)
 
 		switch opcion {
-		case 10:
+		case "salir":
 			color.Yellow("Has elegido salir")
 			return
-		case 1:
+		case "gemini":
 			color.Yellow("Has elegido el comando de Gemini\n ")
 
 			commands.Gemini()
-			time.Sleep(2 * time.Second) // Pausa de 2 segundos
-		case 2:
+			commands.ClearTerminal()
+		case "clima":
 			color.Yellow("Has elegido el comando de Clima\n ")
 
 			commands.Clima()
-			time.Sleep(2 * time.Second) // Pausa de 2 segundos
-		case 3:
-			color.Yellow("Has elegido el comando de Creditos\n ")
-
-			commands.Creditos()
-			time.Sleep(2 * time.Second) // Pausa de 2 segundos
-		case 4:
-			color.Yellow("Has elegido el comando de Version\n ")
-
-			commands.Version()
-			time.Sleep(2 * time.Second) // Pausa de 2 segundos
-		case 5:
-			color.Yellow("Has elegido el comando de Limpiar terminal\n ")
-
 			commands.ClearTerminal()
-			time.Sleep(2 * time.Second) // Pausa de 2 segundos
+
+		case "spoo.me":
+			color.Yellow("Has elegido el comando de Spoo.me\n ")
+
+			commands.SpooMe()
+			commands.ClearTerminal()
 		default:
-			color.Red("No se pudo encontrar ese comando")
+			color.Red("No se pudo encontrar ese comando, intentalo de nuevo.")
+
 			time.Sleep(2 * time.Second) // Pausa de 2 segundos
+			commands.ClearTerminal()
 		}
 
 	}

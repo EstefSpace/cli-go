@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/estefspace/gemini-go"
 	"github.com/fatih/color"
@@ -35,7 +36,7 @@ func Gemini() {
 
 		if strings.ToLower(prompt) == "salir" {
 			color.Green("Conversación terminada.")
-
+			time.Sleep(2 * time.Second) // Pausa de 2 segundos
 			break
 		}
 
