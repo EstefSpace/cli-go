@@ -42,7 +42,7 @@ func Gemini() {
 
 		resp, err := client.Ask("Necesito que respondas a lo siguiente con estas reglas: 1. NO USES ** ni # en tu texto 2. Responde de manera eficiente y rapida sin tanto rollo. Prompt:" + prompt)
 		if err != nil {
-			color.Red("Ocurrio un error al intentar mostrar la respuesta de Gemini: %v", err)
+			color.Red("Ocurrio un error al intentar mostrar la respuesta de Gemini")
 			continue // Continúa con el siguiente prompt
 		}
 
